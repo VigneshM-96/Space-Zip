@@ -229,8 +229,11 @@ export default function LiveDashboard() {
 /* -------------------------- Mission Console -------------------------- */
 function MissionConsole({ satTotal, topCountry, kpIndex, solarWind, onRefresh, loading }) {
   return (
-    <div className="rounded-2xl bg-white/12 border border-white/10 backdrop-blur-md p-3 flex items-center justify-between gap-4">
-      <div className="flex items-center gap-4">
+    <div className="rounded-2xl bg-white/12 border border-white/10 backdrop-blur-md p-3 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      
+      {/* Stats */}
+      <div className="flex flex-col md:flex-row md:items-center gap-4 w-full md:w-auto">
+        {/* Active Satellites */}
         <div className="flex items-center gap-2">
           <GlobeIcon size={22} />
           <div>
@@ -239,24 +242,31 @@ function MissionConsole({ satTotal, topCountry, kpIndex, solarWind, onRefresh, l
           </div>
         </div>
 
-        <div className="pl-4 border-l border-white/6">
+        {/* Top operator */}
+        <div className="pl-0 md:pl-4 border-t border-white/6 md:border-t-0 md:border-l">
           <div className="text-xs text-gray-300">Top operator</div>
           <div className="font-semibold">{topCountry?.country} ({topCountry?.count?.toLocaleString()})</div>
         </div>
 
-        <div className="pl-4 border-l border-white/6">
+        {/* Kp index */}
+        <div className="pl-0 md:pl-4 border-t border-white/6 md:border-t-0 md:border-l">
           <div className="text-xs text-gray-300">Kp index</div>
           <div className="font-semibold">{kpIndex}</div>
         </div>
 
-        <div className="pl-4 border-l border-white/6">
+        {/* Solar wind */}
+        <div className="pl-0 md:pl-4 border-t border-white/6 md:border-t-0 md:border-l">
           <div className="text-xs text-gray-300">Solar wind</div>
           <div className="font-semibold">{solarWind} km/s</div>
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
-        <button onClick={onRefresh} className="px-3 py-1 rounded-md bg-white/8 border border-white/12 text-sm">
+      {/* Buttons */}
+      <div className="flex flex-row md:flex-col items-center md:items-end gap-3 w-full md:w-auto">
+        <button
+          onClick={onRefresh}
+          className="px-3 py-1 rounded-md bg-white/8 border border-white/12 text-sm"
+        >
           <RefreshCw size={14} className="inline-block mr-2" /> {loading ? "Refreshing..." : "Refresh"}
         </button>
         <button className="px-3 py-1 rounded-md bg-white/8 border border-white/12 text-sm">Settings</button>
@@ -264,6 +274,7 @@ function MissionConsole({ satTotal, topCountry, kpIndex, solarWind, onRefresh, l
     </div>
   );
 }
+
 
 /* -------------------------- Visual Components -------------------------- */
 
