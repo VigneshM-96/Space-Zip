@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Space-Zip/static/css/main.b079a1dc.css",
-    "main.js": "/Space-Zip/static/js/main.891fa12d.js",
+    "main.js": "/Space-Zip/static/js/main.6b5ef4e7.js",
     "index.html": "/Space-Zip/index.html",
     "main.b079a1dc.css.map": "/Space-Zip/static/css/main.b079a1dc.css.map",
-    "main.891fa12d.js.map": "/Space-Zip/static/js/main.891fa12d.js.map"
+    "main.6b5ef4e7.js.map": "/Space-Zip/static/js/main.6b5ef4e7.js.map"
   },
   "entrypoints": [
     "static/css/main.b079a1dc.css",
-    "static/js/main.891fa12d.js"
+    "static/js/main.6b5ef4e7.js"
   ]
 }
